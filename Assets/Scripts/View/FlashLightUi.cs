@@ -5,12 +5,12 @@ namespace Geekbrains
 {
     public sealed class FlashLightUi : MonoBehaviour
     {
-        [SerializeField]private Text _text;
+        private Text _text;
         [SerializeField]private Image _image;
 
         private void Awake()
         {
-            //_text = GetComponent<Text>();
+            _text = GetComponent<Text>();
             
         }
 
