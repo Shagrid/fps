@@ -57,5 +57,15 @@ namespace Geekbrains
             }
             return false;
         }
+
+        public void BatteryCharging(float charge)
+        {
+            BatteryChargeCurrent += charge;
+            if (BatteryChargeCurrent > BatteryChargeMax)
+            {
+                BatteryChargeCurrent = BatteryChargeMax;
+            }
+
+        }
     }
 }
