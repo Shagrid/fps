@@ -45,6 +45,7 @@ namespace Geekbrains
             if (_flashLightModel.EditBatteryCharge())
             {
                 _flashLightUi.Text = _flashLightModel.BatteryChargeCurrent;
+                _flashLightUi.SetBatteryBar(_flashLightModel.BatteryChargeCurrent / _flashLightModel.BatteryChargeMax);
             }
             else
             {

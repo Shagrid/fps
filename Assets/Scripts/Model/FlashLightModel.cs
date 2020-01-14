@@ -9,8 +9,9 @@ namespace Geekbrains
         private Transform _goFollow;
         private Vector3 _vecOffset;
         public float BatteryChargeCurrent { get; private set; }
+        public float BatteryChargeMax;
         [SerializeField] private float _speed = 11;
-        [SerializeField] private float _batteryChargeMax;
+        
 
         protected override void Awake()
         {
@@ -18,7 +19,7 @@ namespace Geekbrains
             _light = GetComponent<Light>();
             _goFollow = Camera.main.transform;
             _vecOffset = transform.position - _goFollow.position;
-            BatteryChargeCurrent = _batteryChargeMax;
+            BatteryChargeCurrent = BatteryChargeMax;
         }
 
         public void Switch(FlashLightActiveType value)
