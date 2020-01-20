@@ -1,4 +1,6 @@
-﻿namespace Geekbrains
+﻿using UnityEditor.VersionControl;
+
+namespace Geekbrains
 {
 	public sealed class Gun : Weapon
 	{
@@ -12,5 +14,6 @@
 			_isReady = false;
 			Invoke(nameof(ReadyShoot), _rechergeTime);
 		}
+		
 	}
 }

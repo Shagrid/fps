@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Geekbrains
 {
@@ -24,11 +26,38 @@ namespace Geekbrains
 			FlashLight.Switch(FlashLightActiveType.Off);
 		}
 
+		public Weapon GetWeapon(int i)
+		{
+			return Weapons[i];
+		}
 		//todo Добавить функционал
 
         public void RemoveWeapon(Weapon weapon)
         {
-            
+	        for (int i = 0; i < Weapons.Length; i++)
+	        {
+		        if (weapon.GetHashCode() == Weapons[i].GetHashCode())
+		        {
+			        Weapons[i] = null;
+			        
+			        return;
+		        }
+	        }
         }
+
+        public void AddWeapon(Weapon weapon)
+        {
+	        for (int i = 0; i < Weapons.Length; i++)
+	        {
+		        if (Weapons[i] == null)
+		        {
+			        Weapons[i] = weapon;
+		        }
+	        }
+
+	        throw new Exception("Найти время и придумать обработчик на случай, если место не найдено!");
+        }
+
+        
 	}
 }

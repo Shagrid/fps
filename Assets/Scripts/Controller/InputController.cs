@@ -27,6 +27,10 @@ namespace Geekbrains
             {
                 SelectWeapon(0);
             }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SelectWeapon(1);
+            }
             
             if (Input.GetMouseButton(_mouseButton))
             {
@@ -56,7 +60,7 @@ namespace Geekbrains
         private void SelectWeapon(int i)
         {
             ServiceLocator.Resolve<WeaponController>().Off();
-            var tempWeapon = ServiceLocator.Resolve<Inventory>().Weapons[i]; //todo инкапсулировать
+            var tempWeapon = ServiceLocator.Resolve<Inventory>().GetWeapon(i); //todo инкапсулировать
             if (tempWeapon != null)
             {
                 ServiceLocator.Resolve<WeaponController>().On(tempWeapon);

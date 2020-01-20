@@ -22,6 +22,7 @@ namespace Geekbrains
 
 		private void Start()
 		{
+			
 			for (var i = 0; i <= _countClip; i++)
 			{
 				AddClip(new Clip { CountAmmunition = Random.Range(_minCountAmmunition, _maxCountAmmunition) });

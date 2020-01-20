@@ -2,8 +2,9 @@
 {
 	public enum AmmunitionType
 	{
-		None   = 0,
-		Rpg    = 2,
-		Bullet = 4
+		None     = 0,
+		Rpg      = 2,
+		Bullet   = 4,
+		Greneade = 8
 	}
 }

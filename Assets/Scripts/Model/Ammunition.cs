@@ -23,7 +23,7 @@ namespace Geekbrains
             InvokeRepeating(nameof(LossOfDamage), 0, 1);
         }
 
-        public void AddForce(Vector3 dir)
+        public virtual void AddForce(Vector3 dir)
         {
             if (!Rigidbody) return;
             Rigidbody.AddForce(dir);

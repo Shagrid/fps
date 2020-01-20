@@ -42,11 +42,7 @@ namespace Geekbrains
                 switch (_selectedObj)
                 {
                     case Weapon aim:
-
-                        // в инвентарь
-
-
-                        //Inventory.AddWeapon(aim);
+                        //ServiceLocator.Resolve<Inventory>().AddWeapon(aim);
                         break;
                     case Wall wall:
                         break;
