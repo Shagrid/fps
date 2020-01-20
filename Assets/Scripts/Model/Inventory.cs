@@ -9,6 +9,7 @@ namespace Geekbrains
 		private Weapon[] _weapons = new Weapon[5];
 
 		public Weapon[] Weapons => _weapons;
+		public int CurrentWeapon {get; private set;}
 
 		public FlashLightModel FlashLight { get; private set; }
 
