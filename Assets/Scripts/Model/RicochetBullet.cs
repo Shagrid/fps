@@ -15,14 +15,20 @@ namespace Geekbrains
             {
                 tempObj.SetDamage(new InfoCollision(_curDamage, Rigidbody.velocity));
             }
-            
-            if(_countRicochet > 0)
+            else
             {
-                _curDamage = _curDamage / 2;
-                _countRicochet--;
-                return;
+                if (_countRicochet > 0)
+                {
+                    _curDamage = _curDamage / 2;
+                    _countRicochet--;
+                }
+                else
+                {
+                    DestroyAmmunition();
+                }
             }
-            DestroyAmmunition();
+            
+            
 
         }
     }
