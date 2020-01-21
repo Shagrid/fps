@@ -39,7 +39,7 @@ namespace Geekbrains
                 {
                     gameObject.AddComponent<Rigidbody>();
                 }
-                Destroy(gameObject, 10);
+                Destroy(gameObject, 0.1f);
 
                 OnPointChange?.Invoke();
                 _isDead = true;

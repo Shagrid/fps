@@ -21,14 +21,12 @@ namespace Geekbrains
                 {
                     _curDamage = _curDamage / 2;
                     _countRicochet--;
+                    return;
                 }
-                else
-                {
-                    DestroyAmmunition();
-                }
+                
             }
-            
-            
+
+            DestroyAmmunition();
 
         }
     }
