@@ -5,8 +5,7 @@ namespace Geekbrains
 {
 	public abstract class Weapon : BaseObjectScene
 	{
-		private int _maxCountAmmunition = 40;
-		private int _minCountAmmunition = 20;
+		[SerializeField]private int _countAmmunition = 30;
 		private int _countClip = 5;
 		public Ammunition Ammunition;
 		public Clip Clip;
@@ -25,7 +24,7 @@ namespace Geekbrains
 			
 			for (var i = 0; i <= _countClip; i++)
 			{
-				AddClip(new Clip { CountAmmunition = Random.Range(_minCountAmmunition, _maxCountAmmunition) });
+				AddClip(new Clip {CountAmmunition = _countAmmunition});
 			}
 			
 			ReloadClip();

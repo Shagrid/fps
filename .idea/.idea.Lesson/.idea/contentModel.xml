@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Любовь\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Любовь\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Lesson.1059500711.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Любовь\Desktop\Lesson" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Controller" t="Include">
+            <e p="BaseController.cs" t="Include" />
+            <e p="Controllers.cs" t="Include" />
+            <e p="FlashLightController.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="InputController.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="Enums" t="Include">
+            <e p="FlashLightActiveType.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IExecute.cs" t="Include" />
+            <e p="IInitialization.cs" t="Include" />
+            <e p="IMotor.cs" t="Include" />
+          </e>
+          <e p="Model" t="Include">
+            <e p="BaseObjectScene.cs" t="Include" />
+            <e p="FlashLightModel.cs" t="Include" />
+            <e p="UnitMotor.cs" t="Include" />
+          </e>
+          <e p="ServiceLocator" t="Include">
+            <e p="ServiceLocator.cs" t="Include" />
+            <e p="ServiceLocatorMonoBehaviour.cs" t="Include" />
+          </e>
+          <e p="Test.cs" t="Include" />
+          <e p="View" t="Include">
+            <e p="FlashLightUi.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Lesson.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

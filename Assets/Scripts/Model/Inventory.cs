@@ -9,7 +9,7 @@ namespace Geekbrains
 		private Weapon[] _weapons = new Weapon[5];
 
 		public Weapon[] Weapons => _weapons;
-		public int CurrentWeapon {get; private set;}
+		private int _currentWeapon;
 
 		public FlashLightModel FlashLight { get; private set; }
 
@@ -29,6 +29,7 @@ namespace Geekbrains
 
 		public Weapon GetWeapon(int i)
 		{
+			_currentWeapon = i;
 			return Weapons[i];
 		}
 		//todo Добавить функционал
@@ -59,6 +60,35 @@ namespace Geekbrains
 	        throw new Exception("Найти время и придумать обработчик на случай, если место не найдено!");
         }
 
+		public int NextWeapon()
+		{
+			int newWeaponIndex;
+			do
+			{
+				newWeaponIndex = ++_currentWeapon;
+				if(newWeaponIndex >= Weapons.Length)
+				{
+					newWeaponIndex = 0;
+				}
+			} while (Weapons[newWeaponIndex] == null);
+
+			return newWeaponIndex;
+		}
+
+		public int PreviousWeapon()
+		{
+			int newWeaponIndex;
+			do
+			{
+				newWeaponIndex = --_currentWeapon;
+				if (newWeaponIndex < 0)
+				{
+					newWeaponIndex = Weapons.Length - 1;
+				}
+			} while (Weapons[newWeaponIndex] == null);
+			
+			return newWeaponIndex;
+		}
         
 	}
 }

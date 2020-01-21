@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Geekbrains
 {
@@ -21,7 +22,8 @@ namespace Geekbrains
             {
                 ServiceLocator.Resolve<FlashLightController>().Switch(ServiceLocator.Resolve<Inventory>().FlashLight);
             }
-            //todo реализовать выбор оружия по колесику мыши
+
+            ScrollingWheelMouse(Input.GetAxis("Mouse ScrollWheel"));
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -31,7 +33,11 @@ namespace Geekbrains
             {
                 SelectWeapon(1);
             }
-            
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SelectWeapon(2);
+            }
+
             if (Input.GetMouseButton(_mouseButton))
             {
                 if (ServiceLocator.Resolve<WeaponController>().IsActive)
@@ -50,6 +56,22 @@ namespace Geekbrains
             {
                 ServiceLocator.Resolve<WeaponController>().ReloadClip();
             }
+        }
+
+        private void ScrollingWheelMouse(float v)
+        {
+            if (v == 0) return;
+            int weaponIndex = 0;
+            if (v > 0)
+            {
+               weaponIndex =  ServiceLocator.Resolve<Inventory>().NextWeapon();
+            }
+            if (v < 0)
+            {
+                weaponIndex = ServiceLocator.Resolve<Inventory>().PreviousWeapon();
+            }
+  
+            SelectWeapon(weaponIndex);
         }
 
 
