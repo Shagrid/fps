@@ -19,6 +19,7 @@ namespace Geekbrains
             ServiceLocator.SetService(new WeaponController());
             ServiceLocator.SetService(new Inventory());
             ServiceLocator.SetService(new SpawnController(ServiceLocatorMonoBehaviour.GetService<Spawn>()));
+            ServiceLocator.SetService(new PoolAmunitionController());
             
             _executeControllers = new IExecute[5];
 
@@ -31,6 +32,7 @@ namespace Geekbrains
             _executeControllers[3] = ServiceLocator.Resolve<SelectionController>();
 
             _executeControllers[4] = ServiceLocator.Resolve<SpawnController>();
+
         }
         
         public IExecute this[int index] => _executeControllers[index];
@@ -50,6 +52,7 @@ namespace Geekbrains
             ServiceLocator.Resolve<SelectionController>().On();
             ServiceLocator.Resolve<PlayerController>().On();
             ServiceLocator.Resolve<SpawnController>().On();
+            
         }
     }
 }
