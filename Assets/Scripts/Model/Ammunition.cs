@@ -8,25 +8,23 @@ namespace Geekbrains
         [SerializeField] private float _baseDamage = 10;
         protected float _curDamage;
         private float _lossOfDamageAtTime = 0.2f;
+        private PoolAmmunitions _poolAmmunitions;
 
         public AmmunitionType Type = AmmunitionType.Bullet;
 
         protected override void Awake()
         {
             base.Awake();
-            _curDamage = _baseDamage;
+            _poolAmmunitions = ServiceLocatorMonoBehaviour.GetService<PoolAmmunitions>();
         }
-
-        private void Start()
-        {
-            DestroyAmmunition(_timeToDestruct);
-            InvokeRepeating(nameof(LossOfDamage), 0, 1);
-        }
-
+        
         public virtual void AddForce(Vector3 dir)
         {
             if (!Rigidbody) return;
+            _curDamage = _baseDamage;
             Rigidbody.AddForce(dir);
+            //DestroyAmmunition(_timeToDestruct);
+            InvokeRepeating(nameof(LossOfDamage), 0, 1);
         }
 
         private void LossOfDamage()
@@ -36,9 +34,12 @@ namespace Geekbrains
 
         protected void DestroyAmmunition(float timeToDestruct = 0)
         {
-            Destroy(gameObject, timeToDestruct);
+            //Destroy(gameObject, timeToDestruct);
+            _poolAmmunitions.InsertBullet(this);
+            SetActive(false);
+            DisableRigidBody();
             CancelInvoke(nameof(LossOfDamage));
-            // Вернуть в пул
+         
         }
     }
 }

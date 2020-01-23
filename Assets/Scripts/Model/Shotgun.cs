@@ -12,15 +12,16 @@ namespace Geekbrains
         {
             if (!_isReady) return;
             if (Clip.CountAmmunition <= 0) return;
-            Ammunition amunition;
+            Ammunition ammunition;
             Vector3 orientation;
             for (int i = 0; i < _countPelletss; i++)
             {
                 orientation = new Vector3(_barrel.forward.x + Random.Range(-_spread, _spread), 
                                           _barrel.forward.y + Random.Range(-_spread, _spread), 
                                           _barrel.forward.z + Random.Range(-_spread, _spread));
-                amunition = Instantiate(Ammunition, _barrel.position, _barrel.rotation);
-                amunition.AddForce(orientation * _force);
+                ammunition = _poolAmmunitions.GetAmmunition(Ammunition.GetType(), _barrel.position, _barrel.rotation);
+                ammunition.EnableRigidBody();
+                ammunition.AddForce(orientation * _force);
             }
             Clip.CountAmmunition--;
             _isReady = false;

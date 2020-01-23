@@ -5,6 +5,8 @@ namespace Geekbrains
 {
 	public abstract class Weapon : BaseObjectScene
 	{
+		protected PoolAmmunitions _poolAmmunitions;
+		
 		[SerializeField]private int _countAmmunition = 30;
 		private int _countClip = 5;
 		public Ammunition Ammunition;
@@ -21,6 +23,7 @@ namespace Geekbrains
 
 		private void Start()
 		{
+			_poolAmmunitions = ServiceLocatorMonoBehaviour.GetService<PoolAmmunitions>();
 			
 			for (var i = 0; i <= _countClip; i++)
 			{

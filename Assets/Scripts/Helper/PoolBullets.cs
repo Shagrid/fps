@@ -3,29 +3,15 @@ using System.Collections.Generic;
 
 namespace Geekbrains
 {
-    public sealed class PoolBullets : BaseObjectScene
+    public sealed class PoolBullets 
     {
         
         private Queue<Ammunition> _ammunitions = new Queue<Ammunition>();
 
-        public PoolBullets(AmmunitionType type, int countBullet)
+        public PoolBullets()
         {
             _ammunitions = new Queue<Ammunition>();
-            switch (type)
-            {
-                case AmmunitionType.None:
-                    break;
-                case AmmunitionType.Rpg:
-                    break;
-                case AmmunitionType.Bullet: 
-                    InsertBullets(countBullet);
-                    break;
-                case AmmunitionType.RicochetBullet:
-                    InsertRicochetBullets(countBullet);
-                    break;
-                default:
-                    break;
-            }
+            
         }
 
         public Ammunition GetAmmunition()
@@ -37,23 +23,11 @@ namespace Geekbrains
             return null;
         }
 
-        private void InsertBullets(int counter)
+        public void InsertBullets(Ammunition ammunition)
         {
-            for (int i = 0; i < counter; i++)
-            {
-                Bullet bullet = new Bullet();
-                bullet.SetActive(false);
-                _ammunitions.Enqueue(bullet);
-            }
+            _ammunitions.Enqueue(ammunition);
+            
         }
-        private void InsertRicochetBullets(int counter)
-        {
-            for (int i = 0; i < counter; i++)
-            {
-                RicochetBullet bullet = new RicochetBullet();
-                bullet.SetActive(false);
-                _ammunitions.Enqueue(bullet);
-            }
-        }
+        
     }
 }

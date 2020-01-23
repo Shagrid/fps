@@ -19,8 +19,7 @@ namespace Geekbrains
             ServiceLocator.SetService(new WeaponController());
             ServiceLocator.SetService(new Inventory());
             ServiceLocator.SetService(new SpawnController(ServiceLocatorMonoBehaviour.GetService<Spawn>()));
-            ServiceLocator.SetService(new PoolAmunitionController());
-            
+
             _executeControllers = new IExecute[5];
 
             _executeControllers[0] = ServiceLocator.Resolve<PlayerController>();
