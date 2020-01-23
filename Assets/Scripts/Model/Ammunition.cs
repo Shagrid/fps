@@ -23,7 +23,7 @@ namespace Geekbrains
             if (!Rigidbody) return;
             _curDamage = _baseDamage;
             Rigidbody.AddForce(dir);
-            //DestroyAmmunition(_timeToDestruct);
+            DestroyAmmunition(_timeToDestruct);
             InvokeRepeating(nameof(LossOfDamage), 0, 1);
         }
 
@@ -35,11 +35,16 @@ namespace Geekbrains
         protected void DestroyAmmunition(float timeToDestruct = 0)
         {
             //Destroy(gameObject, timeToDestruct);
+            Invoke(nameof(returnAmmunition), timeToDestruct);
+            CancelInvoke(nameof(LossOfDamage));
+         
+        }
+
+        private void returnAmmunition()
+        {
             _poolAmmunitions.InsertBullet(this);
             SetActive(false);
             DisableRigidBody();
-            CancelInvoke(nameof(LossOfDamage));
-         
         }
     }
 }
