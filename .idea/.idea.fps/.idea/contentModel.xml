@@ -28,6 +28,7 @@
         <e p="Scripts" t="Include">
           <e p="Controller" t="Include">
             <e p="BaseController.cs" t="Include" />
+            <e p="BotController.cs" t="Include" />
             <e p="Controllers.cs" t="Include" />
             <e p="FlashLightController.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
@@ -40,11 +41,14 @@
             <e p="AmmunitionType.cs" t="Include" />
             <e p="FlashLightActiveType.cs" t="Include" />
             <e p="MouseButton.cs" t="Include" />
+            <e p="StateBot.cs" t="Include" />
           </e>
           <e p="Helper" t="Include">
+            <e p="BulletProjector.cs" t="Include" />
             <e p="CustumDebug.cs" t="Include" />
             <e p="InfoCollision.cs" t="Include" />
             <e p="PoolBullets.cs" t="Include" />
+            <e p="Reference.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
             <e p="IExecute.cs" t="Include" />
@@ -58,7 +62,10 @@
           </e>
           <e p="Model" t="Include">
             <e p="AI" t="Include">
+              <e p="BodyBot.cs" t="Include" />
               <e p="bot.cs" t="Include" />
+              <e p="HeadBot.cs" t="Include" />
+              <e p="Patrol.cs" t="Include" />
               <e p="Vision.cs" t="Include" />
             </e>
             <e p="Aim.cs" t="Include" />
