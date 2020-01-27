@@ -34,7 +34,6 @@
             <e p="InputController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SelectionController.cs" t="Include" />
-            <e p="SpawnController.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
           </e>
           <e p="Enums" t="Include">
@@ -58,6 +57,10 @@
             <e p="TagManager.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
+            <e p="AI" t="Include">
+              <e p="bot.cs" t="Include" />
+              <e p="Vision.cs" t="Include" />
+            </e>
             <e p="Aim.cs" t="Include" />
             <e p="Ammunition.cs" t="Include" />
             <e p="BaseObjectScene.cs" t="Include" />
@@ -69,7 +72,6 @@
             <e p="PoolAmmunitions.cs" t="Include" />
             <e p="RicochetBullet.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
-            <e p="Spawn.cs" t="Include" />
             <e p="UnitMotor.cs" t="Include" />
             <e p="Wall.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
