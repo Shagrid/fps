@@ -101,10 +101,18 @@ namespace Geekbrains
 						}
 					}
 				}
+				else
+				{
+					if (StateBot == StateBot.None && Agent.hasPath)
+					{
+						Agent.ResetPath();
+					}
+				}
 
 				if (Vision.VisionM(transform, Target))
 				{
 					StateBot = StateBot.Detected;
+					CancelInvoke(nameof(ResetStateBot));
 				}
 			}
 			else
@@ -126,7 +134,10 @@ namespace Geekbrains
 					MovePoint(Target.position);
 				}
 
-                //todo Потеря персонажа
+				if (Vision.CheckOnLost(transform, Target))
+				{
+					ResetStateBot();
+				}
             }
         }
 
@@ -166,9 +177,11 @@ namespace Geekbrains
             }
 		}
 
-		public void MovePoint(Vector3 point)
+		private void MovePoint(Vector3 point)
 		{
 			Agent.SetDestination(point);
 		}
+
+		
 	}
 }
