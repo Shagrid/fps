@@ -10,12 +10,17 @@ namespace Geekbrains
 
         public bool VisionM(Transform player, Transform target)
         {
+            Debug.Log(CheckBlocked(player, target));
             return Dist(player, target) && Angle(player, target) && CheckBlocked(player, target);
         }
 
         private bool CheckBlocked(Transform player, Transform target)
         {
-            if (!Physics.Linecast(player.position, target.position, out var hit)) return true;
+            if (!Physics.Linecast(player.position, target.position, out var hit))
+            {
+                return true;
+            }
+            Debug.Log(hit.transform.name);
             return hit.transform != target;
         }
         private bool Angle(Transform player, Transform target)
@@ -25,10 +30,10 @@ namespace Geekbrains
         }
         private bool Dist(Transform player, Transform target)
         {
-          //  var dist = (player.position - target.position).sqrMagnitude;
-          //  return dist <= ActiveDis * ActiveDis;
-          var dist = Vector3.Distance(player.position, target.position); //todo оптимизация
-          return dist <= ActiveDis;
+          var dist = (player.position - target.position).sqrMagnitude;
+          return dist <= ActiveDis * ActiveDis;
+            //var dist = Vector3.Distance(player.position, target.position); //todo оптимизация
+            //return dist <= ActiveDis;
 
         }
         

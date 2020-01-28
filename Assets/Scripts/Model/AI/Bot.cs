@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -80,6 +79,7 @@ namespace Geekbrains
 
 			if (StateBot != StateBot.Detected)
 			{
+				
 				if (!Agent.hasPath)
 				{
 					if (StateBot != StateBot.Inspection)
@@ -115,6 +115,7 @@ namespace Geekbrains
 				}
 				if (Vision.VisionM(transform, Target))
 				{
+					Debug.Log("Fire");
                     Weapon.Fire();
 				}
 				else

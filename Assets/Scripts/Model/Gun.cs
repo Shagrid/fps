@@ -1,6 +1,4 @@
-﻿using UnityEditor.VersionControl;
-
-namespace Geekbrains
+﻿namespace Geekbrains
 {
 	public sealed class Gun : Weapon
 	{
