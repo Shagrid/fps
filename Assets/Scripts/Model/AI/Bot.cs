@@ -115,8 +115,11 @@ namespace Geekbrains
 				}
 				if (Vision.VisionM(transform, Target))
 				{
-					Debug.Log("Fire");
-                    Weapon.Fire();
+					Weapon.Fire();
+					if (Weapon.Clip.CountAmmunition == 0)
+					{
+						Weapon.ReloadClip();
+					}
 				}
 				else
 				{

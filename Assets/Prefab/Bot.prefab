@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 0}
   Transform: {fileID: 0}
-  _countAmmunition: 3000
+  _countAmmunition: 30
   Ammunition: {fileID: 8901952978020707258, guid: ca1df36b30204724cb8eb4f5b1163491,
     type: 3}
   AmmunitionTypes: 04000000
@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4150504979850117026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.597}
+  m_LocalPosition: {x: 0, y: 0, z: 0.742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3064447782495951258}
@@ -283,8 +283,9 @@ MonoBehaviour:
   Transform: {fileID: 0}
   Hp: 100
   Vision:
-    ActiveDis: 30
+    ActiveDis: 10
     ActiveAng: 35
+    LostDistance: 40
   Weapon: {fileID: 2443827103268533189}
 --- !u!114 &4747817453825760653
 MonoBehaviour:
@@ -312,7 +313,7 @@ GameObject:
   - component: {fileID: 2473526638337151395}
   - component: {fileID: 6290551937464229286}
   - component: {fileID: 3928694186083338678}
-  - component: {fileID: 2086305534}
+  - component: {fileID: 3464716752370683307}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -394,7 +395,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2086305534
+--- !u!114 &3464716752370683307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

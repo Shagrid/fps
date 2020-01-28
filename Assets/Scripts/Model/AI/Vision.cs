@@ -7,11 +7,11 @@ namespace Geekbrains
     {
         public float ActiveDis = 10;
         public float ActiveAng = 35;
+        public float LostDistance = 40;
 
         public bool VisionM(Transform player, Transform target)
         {
-            Debug.Log(CheckBlocked(player, target));
-            return Dist(player, target) && Angle(player, target) && CheckBlocked(player, target);
+            return Dist(player, target) && Angle(player, target) && !CheckBlocked(player, target);
         }
 
         private bool CheckBlocked(Transform player, Transform target)
@@ -20,7 +20,6 @@ namespace Geekbrains
             {
                 return true;
             }
-            Debug.Log(hit.transform.name);
             return hit.transform != target;
         }
         private bool Angle(Transform player, Transform target)
