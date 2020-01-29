@@ -149,9 +149,18 @@ namespace Geekbrains
 		private void SetDamage(InfoCollision info)
 		{
             //todo реакциия на попадание  
+            CustumDebug.Log(info.ObjCollision.forward);
 			if (Hp > 0)
 			{
 				Hp -= info.Damage;
+				if (StateBot != StateBot.Detected)
+				{
+					transform.rotation = Quaternion.FromToRotation(Vector3.forward, info.Contact.normal);
+					Agent.ResetPath();
+					StateBot = StateBot.Inspection;
+					Invoke(nameof(ResetStateBot), _waitTime);
+				}
+
 				return;
 			}
 
