@@ -134,7 +134,7 @@ namespace Geekbrains
 					MovePoint(Target.position);
 				}
 
-				if (Vision.CheckOnLost(transform, Target))
+				if (Vision.CheckOnLoss(transform, Target))
 				{
 					ResetStateBot();
 				}

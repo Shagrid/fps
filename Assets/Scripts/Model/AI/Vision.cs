@@ -14,7 +14,7 @@ namespace Geekbrains
             return Dist(player, target) && Angle(player, target) && !CheckBlocked(player, target);
         }
 
-        public bool CheckOnLost(Transform player, Transform target)
+        public bool CheckOnLoss(Transform player, Transform target)
         {
             return Dist(player, target, true);
         }
