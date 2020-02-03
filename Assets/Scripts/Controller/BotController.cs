@@ -11,9 +11,11 @@ namespace Geekbrains
 
         public void Initialization()
         {
+            var botPrefab = Resources.Load<Bot>("Bot");
+            CustumDebug.Log(botPrefab.Name);
             for (var index = 0; index < _countBot; index++)
             {
-                var tempBot = Object.Instantiate(ServiceLocatorMonoBehaviour.GetService<Reference>().Bot,
+                var tempBot = Object.Instantiate(botPrefab,
                     Patrol.GenericPoint(ServiceLocatorMonoBehaviour.GetService<CharacterController>().transform),
                     Quaternion.identity);
 

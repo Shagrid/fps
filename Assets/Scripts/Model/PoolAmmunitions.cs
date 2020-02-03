@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Geekbrains;
 using UnityEngine;
 
-namespace Geekbrains
+namespace Geekbrains 
 {
     public class PoolAmmunitions : MonoBehaviour
     {
-        [SerializeField] private Bullet _bullet;
-        [SerializeField] private RicochetBullet _ricochetBullet;
+        private Bullet _bullet;
+        private RicochetBullet _ricochetBullet;
         private PoolBullets _bullets;
         private PoolBullets _ricochetBullets;
         private int _countBulletsInPool = 50; //На данный момент максимальное количество существующих одновлеменно пуль
@@ -14,6 +14,8 @@ namespace Geekbrains
 
         private void Awake()
         {
+            _bullet = Resources.Load<Bullet>(ResourceManager.BULLET);
+            _ricochetBullet = Resources.Load<RicochetBullet>(ResourceManager.RICOCHETBULLET);
             _bullets = new PoolBullets();
             _ricochetBullets = new PoolBullets();
             
