@@ -149,7 +149,7 @@ namespace Geekbrains
 		private void SetDamage(InfoCollision info)
 		{
             //todo реакциия на попадание  
-            CustumDebug.Log(info.ObjCollision.forward);
+        
 			if (Hp > 0)
 			{
 				Hp -= info.Damage;
