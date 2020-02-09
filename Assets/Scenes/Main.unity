@@ -330,7 +330,6 @@ GameObject:
   - component: {fileID: 436812773}
   - component: {fileID: 436812772}
   - component: {fileID: 436812774}
-  - component: {fileID: 436812775}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -376,22 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa8da15d211da044bfdfe23f12cc267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 8901952978020707258, guid: ca1df36b30204724cb8eb4f5b1163491, type: 3}
-  _ricochetBullet: {fileID: 1123179521327791858, guid: 481440b56bbaefb42ac37840c3ecd7c0,
-    type: 3}
---- !u!114 &436812775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436812771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949b53c3e249cb443835896f15dc55ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bot: {fileID: 4610607387329660417, guid: 90d04365435342741aaeddf474703e5d, type: 3}
 --- !u!1 &476596800
 GameObject:
   m_ObjectHideFlags: 0

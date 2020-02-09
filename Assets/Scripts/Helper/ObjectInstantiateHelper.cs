@@ -6,7 +6,7 @@ namespace Geekbrains
     public class ObjectInstantiateHelper : MonoBehaviour
     {
         [SerializeField] private GameObject _prefab;
-        [SerializeField] private string _rootObjectName;
+        [SerializeField] private string _rootObjectName = "NewObject";
         private GameObject _rootObject;
         
         
