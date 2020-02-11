@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1123179521327791858
+--- !u!114 &5940111665277597563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16,7 +16,7 @@ MonoBehaviour:
   Transform: {fileID: 0}
   _timeToDestruct: 10
   _baseDamage: 10
-  Type: 4
+  Type: 8
 --- !u!1001 &1610640671565700911
 PrefabInstance:
   m_ObjectHideFlags: 0

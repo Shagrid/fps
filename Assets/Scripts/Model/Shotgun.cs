@@ -19,7 +19,7 @@ namespace Geekbrains
                 orientation = new Vector3(_barrel.forward.x + Random.Range(-_spread, _spread), 
                                           _barrel.forward.y + Random.Range(-_spread, _spread), 
                                           _barrel.forward.z + Random.Range(-_spread, _spread));
-                ammunition = _poolAmmunitions.GetAmmunition(Ammunition.GetType(), _barrel.position, _barrel.rotation);
+                ammunition = ServiceLocator.Resolve<PoolAmmunitions>().GetAmmunition(AmmunitionType, _barrel.position, _barrel.rotation);
                 ammunition.EnableRigidBody();
                 ammunition.AddForce(orientation * _force);
             }

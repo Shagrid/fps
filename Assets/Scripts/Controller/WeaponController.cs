@@ -3,7 +3,8 @@
     public sealed class WeaponController : BaseController
     {
         private Weapon _weapon;
-
+        
+        
         public override void On(params BaseObjectScene[] weapon)
         {
             if (IsActive) return;
