@@ -10,6 +10,7 @@
 			var temAmmunition = ServiceLocator.Resolve<PoolAmmunitions>().GetAmmunition(AmmunitionType, _barrel.position, _barrel.rotation);//todo Pool object
 			temAmmunition.EnableRigidBody();
 			temAmmunition.AddForce(_barrel.forward * _force);
+			Clip.CountAmmunition--;
 			_isReady = false;
 			Invoke(nameof(ReadyShoot), _rechergeTime);
 		}

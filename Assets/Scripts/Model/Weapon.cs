@@ -7,7 +7,7 @@ namespace Geekbrains
 	{
 		[SerializeField]private int _countAmmunition = 30;
 		private int _countClip = 5;
-		public Ammunition Ammunition;
+		//public Ammunition Ammunition;
 		public Clip Clip;
 
 		public AmmunitionType AmmunitionType = AmmunitionType.Bullet;

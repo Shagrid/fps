@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace Geekbrains
 {
-	public sealed class Bot : BaseObjectScene
+	public sealed class Bot : BaseObjectScene, IHealing
 	{
 		public float Hp = 100;
 		public Vision Vision;
@@ -15,7 +15,7 @@ namespace Geekbrains
 		private StateBot _stateBot;
 		private Vector3 _point;
 		private float _stoppingDistance = 2.0f;
-
+		private float _maxHp;
         public event Action<Bot> OnDieChange;
 
         private StateBot StateBot
@@ -38,6 +38,9 @@ namespace Geekbrains
 					case StateBot.Detected:
                         Color = Color.red;
                         break;
+					case StateBot.Healing:
+						Color = Color.blue;
+						break;
 					case StateBot.Died:
                         Color = Color.gray;
                         break;
@@ -53,6 +56,7 @@ namespace Geekbrains
 		{
 			base.Awake();
 			Agent = GetComponent<NavMeshAgent>();
+			_maxHp = Hp;
 		}
 
 		private void OnEnable()
@@ -75,8 +79,13 @@ namespace Geekbrains
 
         public void Tick()
         {
-	        if (StateBot == StateBot.Died) return;
-
+	        if (StateBot == StateBot.Died || StateBot == StateBot.Healing) return;
+	        if (StateBot != StateBot.Healing && (Hp < _maxHp / 2) && Hp > 0)
+	        {
+		        var medKit = SearchMedKit();
+		        StateBot = StateBot.Healing;
+		        MovePoint(medKit.transform.position);
+	        }
 			if (StateBot != StateBot.Detected)
 			{
 				
@@ -141,6 +150,31 @@ namespace Geekbrains
             }
         }
 
+        private MedKit SearchMedKit()
+        {
+	        var medKids = FindObjectsOfType<MedKit>();
+	        if (medKids.Length == 0) return null;
+	        return NearestMedKit(medKids);
+        }
+
+        private MedKit NearestMedKit(MedKit[] medKids)
+        {
+	        float minDistans = (transform.position - medKids[0].transform.position).magnitude;
+	        float tempDist;
+	        MedKit kit = medKids[0];
+	        for (int i = 1; i < medKids.Length; i++)
+	        {
+		        tempDist = (transform.position - medKids[i].transform.position).magnitude;
+		        if (minDistans > tempDist)
+		        {
+			        minDistans = tempDist;
+			        kit = medKids[i];
+		        }
+	        }
+
+	        return kit;
+        }
+
         private void ResetStateBot()
         {
 	        StateBot = StateBot.None;
@@ -191,6 +225,21 @@ namespace Geekbrains
 			Agent.SetDestination(point);
 		}
 
-		
+
+		public bool Healing(float healingPower)
+		{
+			if (Hp == _maxHp)
+			{
+				return false;
+			}
+			Hp += healingPower;
+			if (Hp > _maxHp)
+			{
+				Hp = _maxHp;
+			}
+
+			StateBot = StateBot.None;
+			return true;
+		}
 	}
 }

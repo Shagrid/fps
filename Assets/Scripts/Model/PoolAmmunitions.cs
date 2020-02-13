@@ -52,78 +52,7 @@ namespace Geekbrains
         {
             //todo переделать
             _ammunitionPools[ammunition.Type].InsertBullets(ammunition);
-            /*if (ammunition is Bullet)
-            {
-               // _bullets.InsertBullets(ammunition);
-            }
             
-            if (ammunition is RicochetBullet)
-            {
-               // _ricochetBullets.InsertBullets(ammunition);
-            }*/
         }
-        // private Bullet _bullet;
-        // private RicochetBullet _ricochetBullet;
-        // private PoolAmmunitionsStruct _bullets;
-        // private PoolAmmunitionsStruct _ricochetBullets;
-        // private int _countBulletsInPool = 50; //На данный момент максимальное количество существующих одновлеменно пуль
-        // private int _countRicochetInPool = 20; //Аналогично для рикошетных пуль
-        //
-        // private void Awake()
-        // {
-        //     _bullet = Resources.Load<Bullet>(ResourceManager.BULLET);
-        //     _ricochetBullet = Resources.Load<RicochetBullet>(ResourceManager.RICOCHETBULLET);
-        //     _bullets = new PoolAmmunitionsStruct();
-        //     _ricochetBullets = new PoolAmmunitionsStruct();
-        //     
-        //     CreateAmmunitions(_bullet, _countBulletsInPool, _bullets);
-        //     CreateAmmunitions(_ricochetBullet, _countRicochetInPool, _ricochetBullets);
-        //     
-        // }
-        //
-        // private void CreateAmmunitions(Ammunition ammunition, int count, PoolAmmunitionsStruct pool)
-        // {
-        //     for (int i = 0; i < count; i++)
-        //     {
-        //         Ammunition bullet = Object.Instantiate(ammunition);
-        //         bullet.SetActive(false);
-        //        pool.InsertBullets(bullet);
-        //     }
-        // }
-        //
-        // public Ammunition GetAmmunition<T>(T value, Vector3 position, Quaternion rotation) where T : class
-        // {
-        //     Ammunition bullet = null;
-        //     if (value.Equals(typeof(Bullet)))
-        //     {
-        //         bullet = _bullets.GetAmmunition();
-        //     }
-        //     if (value.Equals(typeof(RicochetBullet)))
-        //     {
-        //         bullet = _ricochetBullets.GetAmmunition();
-        //     }
-        //
-        //     if (bullet != null)
-        //     {
-        //         bullet.transform.position = position;
-        //         bullet.transform.rotation = rotation;
-        //         bullet.SetActive(true);
-        //         return bullet;
-        //     }
-        //     return null;
-        // }
-        //
-        // public void InsertBullet(Ammunition ammunition)
-        // {
-        //     if (ammunition is Bullet)
-        //     {
-        //         _bullets.InsertBullets(ammunition);
-        //     }
-        //     
-        //     if (ammunition is RicochetBullet)
-        //     {
-        //         _ricochetBullets.InsertBullets(ammunition);
-        //     }
-        // }
     }
 }

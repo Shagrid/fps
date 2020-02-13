@@ -62,6 +62,7 @@
           <e p="Interface" t="Include">
             <e p="IData.cs" t="Include" />
             <e p="IExecute.cs" t="Include" />
+            <e p="IHealing.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="IMotor.cs" t="Include" />
             <e p="ISelectObj.cs" t="Include" />
@@ -88,6 +89,7 @@
             <e p="FlashLightModel.cs" t="Include" />
             <e p="Gun.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
+            <e p="MedKit.cs" t="Include" />
             <e p="PoolAmmunitions.cs" t="Include" />
             <e p="RicochetBullet.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />

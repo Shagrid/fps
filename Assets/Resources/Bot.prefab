@@ -112,7 +112,7 @@ MonoBehaviour:
   _countAmmunition: 30
   Ammunition: {fileID: 8901952978020707258, guid: ca1df36b30204724cb8eb4f5b1163491,
     type: 3}
-  AmmunitionTypes: 04000000
+  AmmunitionType: 4
   _barrel: {fileID: 166820647496660266}
   _force: 999
   _rechergeTime: 0.2
