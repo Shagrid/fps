@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\shagr\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\shagr\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_fps.-1058788426.00" t="ExcludeRecursive" />
-    <e p="C:\Users\shagr\Documents\MyProjects\fps" t="IncludeRecursive">
+    <e p="C:\Users\shagrid\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\shagrid\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_fps.-142931951.00" t="ExcludeRecursive" />
+    <e p="F:\MyPrograms\fps" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -33,6 +33,7 @@
             <e p="FlashLightController.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
+            <e p="MedKitController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SaveDataRepository.cs" t="Include" />
             <e p="SelectionController.cs" t="Include" />

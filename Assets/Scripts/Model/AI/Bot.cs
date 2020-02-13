@@ -211,8 +211,7 @@ namespace Geekbrains
 					{
 						tempRbChild = child.gameObject.AddComponent<Rigidbody>();
 					}
-					//tempRbChild.AddForce(info.Dir * Random.Range(10, 300));
-					
+
 					Destroy(child.gameObject, 10);
 				}
 
