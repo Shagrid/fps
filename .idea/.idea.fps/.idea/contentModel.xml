@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\shagr\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\shagr\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_fps.1312735342.00" t="ExcludeRecursive" />
-    <e p="C:\Users\shagr\Documents\fps" t="IncludeRecursive">
+    <e p="C:\Users\shagrid\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\shagrid\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_fps.-142931951.00" t="ExcludeRecursive" />
+    <e p="F:\MyPrograms\fps" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -33,7 +33,9 @@
             <e p="FlashLightController.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
+            <e p="MedKitController.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="SaveDataRepository.cs" t="Include" />
             <e p="SelectionController.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
           </e>
@@ -50,14 +52,18 @@
           </e>
           <e p="Helper" t="Include">
             <e p="BulletProjector.cs" t="Include" />
+            <e p="Crypto.cs" t="Include" />
             <e p="CustumDebug.cs" t="Include" />
             <e p="InfoCollision.cs" t="Include" />
             <e p="ObjectInstantiateHelper.cs" t="Include" />
-            <e p="PoolBullets.cs" t="Include" />
+            <e p="PoolAmmunitionsStruct.cs" t="Include" />
             <e p="Reference.cs" t="Include" />
+            <e p="SerializableGameObject.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
+            <e p="IData.cs" t="Include" />
             <e p="IExecute.cs" t="Include" />
+            <e p="IHealing.cs" t="Include" />
             <e p="IInitialization.cs" t="Include" />
             <e p="IMotor.cs" t="Include" />
             <e p="ISelectObj.cs" t="Include" />
@@ -84,12 +90,17 @@
             <e p="FlashLightModel.cs" t="Include" />
             <e p="Gun.cs" t="Include" />
             <e p="Inventory.cs" t="Include" />
+            <e p="MedKit.cs" t="Include" />
             <e p="PoolAmmunitions.cs" t="Include" />
             <e p="RicochetBullet.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="UnitMotor.cs" t="Include" />
             <e p="Wall.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
+          </e>
+          <e p="SaveData" t="Include">
+            <e p="BinarySerializationData.cs" t="Include" />
+            <e p="JsonData.cs" t="Include" />
           </e>
           <e p="ServiceLocator" t="Include">
             <e p="ServiceLocator.cs" t="Include" />

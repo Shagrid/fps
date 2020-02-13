@@ -8,15 +8,9 @@ namespace Geekbrains
         [SerializeField] private float _baseDamage = 10;
         protected float _curDamage;
         private float _lossOfDamageAtTime = 0.2f;
-        private PoolAmmunitions _poolAmmunitions;
+
 
         public AmmunitionType Type = AmmunitionType.Bullet;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _poolAmmunitions = ServiceLocatorMonoBehaviour.GetService<PoolAmmunitions>();
-        }
         
         public virtual void AddForce(Vector3 dir)
         {
@@ -42,7 +36,7 @@ namespace Geekbrains
 
         private void returnAmmunition()
         {
-            _poolAmmunitions.InsertBullet(this);
+            ServiceLocator.Resolve<PoolAmmunitions>().InsertBullet(this);
             SetActive(false);
             DisableRigidBody();
         }

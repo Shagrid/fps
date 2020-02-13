@@ -7,7 +7,7 @@
 			if (!_isReady) return;
 			if (Clip.CountAmmunition <= 0) return;
 			//var temAmmunition = Instantiate(Ammunition, _barrel.position, _barrel.rotation);//todo Pool object
-			var temAmmunition = _poolAmmunitions.GetAmmunition(Ammunition.GetType(), _barrel.position, _barrel.rotation);//todo Pool object
+			var temAmmunition = ServiceLocator.Resolve<PoolAmmunitions>().GetAmmunition(AmmunitionType, _barrel.position, _barrel.rotation);//todo Pool object
 			temAmmunition.EnableRigidBody();
 			temAmmunition.AddForce(_barrel.forward * _force);
 			Clip.CountAmmunition--;

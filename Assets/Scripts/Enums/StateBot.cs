@@ -6,6 +6,7 @@
         Patrol     = 1,
         Inspection = 2,
         Detected   = 3,
-        Died       = 4
+        Healing    = 4,
+        Died       = 5
     }
 }

@@ -1,14 +1,15 @@
 ﻿
+using System;
 using System.Collections.Generic;
 
 namespace Geekbrains
 {
-    public sealed class PoolBullets 
+    public sealed class PoolAmmunitionsStruct 
     {
         
         private Queue<Ammunition> _ammunitions = new Queue<Ammunition>();
 
-        public PoolBullets()
+        public PoolAmmunitionsStruct()
         {
             _ammunitions = new Queue<Ammunition>();
             

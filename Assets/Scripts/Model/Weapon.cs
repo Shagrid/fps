@@ -5,14 +5,12 @@ namespace Geekbrains
 {
 	public abstract class Weapon : BaseObjectScene
 	{
-		protected PoolAmmunitions _poolAmmunitions;
-		
 		[SerializeField]private int _countAmmunition = 30;
 		private int _countClip = 5;
-		public Ammunition Ammunition;
+		//public Ammunition Ammunition;
 		public Clip Clip;
 
-		public AmmunitionType[] AmmunitionTypes = {AmmunitionType.Bullet};
+		public AmmunitionType AmmunitionType = AmmunitionType.Bullet;
 
 		[SerializeField] protected Transform _barrel;
 		[SerializeField] protected float _force = 999;
@@ -23,8 +21,6 @@ namespace Geekbrains
 
 		private void Start()
 		{
-			_poolAmmunitions = ServiceLocatorMonoBehaviour.GetService<PoolAmmunitions>();
-			
 			for (var i = 0; i <= _countClip; i++)
 			{
 				AddClip(new Clip {CountAmmunition = _countAmmunition});
@@ -35,12 +31,12 @@ namespace Geekbrains
 
 		public abstract void Fire();
 
-		protected void ReadyShoot()
+		public void ReadyShoot()
 		{
 			_isReady = true;
 		}
 
-		protected void AddClip(Clip clip)
+		private void AddClip(Clip clip)
 		{
 			_clips.Enqueue(clip);
 		}
